@@ -1,0 +1,122 @@
+{% load static %}
+<!doctype html>
+<!--
+	Lamoda by TEMPLATE STOCK
+	templatestock.co @templatestock
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en-gb" class="no-js">
+  <head>
+    <meta charset="utf-8">
+	<title>Fan Art Website</title>
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+	<!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+     <!--styles -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'js/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'js/owl-carousel/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'js/owl-carousel/owl.transitions.css' %}" rel="stylesheet">
+    <link href="{% static 'css/magnific-popup.css" rel="stylesheet' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/etlinefont.css' %}"/>
+    <link href="{% static 'css/style.css' %}" type="text/css"  rel="stylesheet"/>
+    <link rel="icon" href="{% static 'images/favicon_io/favicon.ico' %}">
+
+   <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="{% static 'js/html5shiv.js' %}"></script>
+        <script src="{% static 'js/respond.min.js' %}"></script>
+        <![endif]-->
+
+      <!--Plugins-->
+	<script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl-carousel/owl.carousel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.easypiechart.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.appear.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.parallax-1.1.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body  data-spy="scroll" data-target="#main-menu">
+
+  <!--Start Page loader -->
+  <div id="pageloader">
+        <div class="loader">
+
+          <img src="{% static 'images/progress.gif' %}" alt='loader' />
+        </div>
+   </div>
+   <!--End Page loader -->
+
+    {% block nav %}
+
+   <!--Start Navigation-->
+		<header id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="fa fa-bars"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+                            <!--Start Logo -->
+							<div class="logo-nav">
+								<a href="../">
+									<img src="{% static 'images/嘉然.png' %}" alt="My logo" width="100" height="100" />
+								</a>
+							</div>
+                            <!--End Logo -->
+							<div class="clear-toggle"></div>
+							<div id="main-menu" class="collapse scroll navbar-right">
+								<ul class="nav">
+
+									<li class="active"> <a href="../#home">Home</a> </li>
+
+									<li> <a href="../#about">About</a> </li>
+
+                                    <li> <a href="../#history">History</a> </li>
+
+{#                                    <li> <a href="#works">Our Work</a> </li>#}
+{##}
+{#                                     <li> <a href="#team">Team</a> </li>#}
+{##}
+								    <li> <a href="../home/content">Contents</a> </li>
+                                     <li> <a href="../home/upload">upload</a> </li>
+                                     <li> <a href="../home/random">random&watch</a> </li>
+
+
+									<li> <a href="../#blog">Blog</a></li>
+
+{#                                    <li> <a href="#testimonials">Testimonials</a></li>#}
+
+									<li> <a href="../#contact">Contact</a> </li>
+
+								</ul>
+							</div><!-- end main-menu -->
+						</div>
+					</div>
+				</div>
+			</header>
+    <!--End Navigation-->
+    {% endblock %}
+
+{% block content %}
+{% endblock %}
+ </body>
+
+</html>
