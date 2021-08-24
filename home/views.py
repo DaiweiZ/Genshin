@@ -79,7 +79,8 @@ def random(request):
 
 #https://stackoverflow.com/questions/15512239/python-get-all-youtube-video-urls-of-a-channel
 def get_all_video_in_channel(channel_id):
-    api_key = 'AIzaSyClUdFrF56ziHPC9WniRtoCDE_wo2KiQzc'
+    # edit to add your own API.
+    api_key = ''
 
     base_video_url = 'https://www.youtube.com/embed/'
     base_search_url = 'https://www.googleapis.com/youtube/v3/search?'
