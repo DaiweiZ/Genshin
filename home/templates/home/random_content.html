@@ -48,7 +48,17 @@
 {#                                    <li> <a href="#testimonials">Testimonials</a></li>#}
 
 									<li> <a href="../#contact">Contact</a> </li>
+                                     {% if user.is_authenticated %}
 
+                                   <li class="dropdown">
+                                        <a href="{% url 'logout' %}?next={% url 'home:content' %}">Logout</a>
+
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                    <a href="{% url 'login' %}?next={% url 'home:content' %}">Login</a>
+                                    </li>
+                                    {% endif %}
 								</ul>
 							</div><!-- end main-menu -->
 						</div>
@@ -57,5 +67,45 @@
 			</header>
     <!--End Navigation-->
 {% endblock %}
+
+
 {% block content %}
+<body>
+
+<div id="ytplayer" class="container" style="margin: 10em; text-align: center;">
+<iframe id="yt" width="960" height="600" src="https://www.youtube.com/embed?listType=playlist&list=PLqWr7dyJNgLLcg4CLu_gDuqjRy2VH0zIn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</div>
+<button id='r_b' class="btn-default">random</button>
+
+{#https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array#}
+<script language="javascript" type="text/javascript">
+    const element = document.getElementById("ytplayer");
+    var h = document.getElementById("r_b");
+
+    h.addEventListener('click', function()
+    { /* do stuff here*/
+        my_data = {{ htmls|safe }};
+        console.log(my_data);
+        const randomElement = my_data[Math.floor(Math.random() * my_data.length)];
+        console.log(randomElement);
+        var ytplayer = document.getElementById('yt');
+        ytplayer.remove();
+
+        var iframe = document.createElement('iframe');
+
+
+        iframe.src = randomElement;
+        iframe.width = "960";
+        iframe.height = '600';
+        iframe.id = 'yt';
+
+        element.appendChild(iframe);
+
+        }, false);
+
+</script>
+
+</body>
 {% endblock %}

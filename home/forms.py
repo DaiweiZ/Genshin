@@ -2,11 +2,13 @@ from django import forms
 from home.models import Ad
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from home.humanize import naturalsize
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 # Create the form class.
 class CreateForm(forms.ModelForm):
-    max_upload_limit = 2 * 1024 * 1024
+    max_upload_limit = 2 * 1024 * 1024 #2MB
     max_upload_limit_text = naturalsize(max_upload_limit)
 
     # Call this 'picture' so it gets copied from the form to the in-memory model
@@ -18,7 +20,7 @@ class CreateForm(forms.ModelForm):
     # Hint: this will need to be changed for use in the ads application :)
     class Meta:
         model = Ad
-        fields = ['title', 'text', 'price', 'picture']  # Picture is manual
+        fields = ['title', 'text', 'picture']  # Picture is manual
 
     # Validate the size of the picture
     def clean(self):
@@ -48,6 +50,24 @@ class CreateForm(forms.ModelForm):
 
 class CommentForm(forms.Form):
     comment = forms.CharField(required=True, max_length=500, min_length=3, strip=True)
+
+
+
+# https://www.ordinarycoders.com/blog/article/django-user-register-login-logout
+
+class NewUserForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")
+
+    def save(self, commit=True):
+        user = super(NewUserForm, self).save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
 
 # https://docs.djangoproject.com/en/3.0/topics/http/file-uploads/
 # https://stackoverflow.com/questions/2472422/django-file-upload-size-limit

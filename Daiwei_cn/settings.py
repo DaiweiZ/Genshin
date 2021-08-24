@@ -39,12 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Extensions - installed with pip3 / requirements.txt
     'home.apps.HomeConfig',
-    # 'django_extensions',
-    # 'crispy_forms',
+    'django_extensions',
+    'crispy_forms',
     # 'rest_framework',
     # 'social_django',
     'taggit',
-    # 'home.apps.HomeConfig',
     # 'ads.apps.AdConfig',
 ]
 
@@ -56,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'Daiwei_cn.urls'
@@ -80,15 +80,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Daiwei_cn.wsgi.application'
 
 
+
+
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SSS1141$post',
-        'USER': 'SSS1141',
-        'PASSWORD': 'Dj4eDj4e',
+        'NAME': 'genshin',
+        'USER': 'root',
+        'PASSWORD': 'Cj2!iXM2ssyJ',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
@@ -173,3 +175,10 @@ REST_FRAMEWORK = {
 
 # https://coderwall.com/p/uzhyca/quickly-setup-sql-query-logging-django
 # https://stackoverflow.com/questions/12027545/determine-if-django-is-running-under-the-development-server
+
+# When we get to crispy forms :)
+CRISPY_TEMPLATE_PACK = 'bootstrap3'  # Add
+CRISPY_FAIL_SILENTLY = not DEBUG
+
+# When we get to tagging
+TAGGIT_CASE_INSENSITIVE = True

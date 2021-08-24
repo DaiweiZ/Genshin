@@ -1,4 +1,6 @@
 {% extends "base_head.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block head %}
 
@@ -47,7 +49,17 @@
 {#                                    <li> <a href="#testimonials">Testimonials</a></li>#}
 
 									<li> <a href="../#contact">Contact</a> </li>
+                                    {% if user.is_authenticated %}
 
+                                   <li class="dropdown">
+                                        <a href="{% url 'logout' %}?next={% url 'home:content' %}">Logout</a>
+
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                    <a href="{% url 'login' %}?next={% url 'home:content' %}">Login</a>
+                                    </li>
+                                    {% endif %}
 								</ul>
 							</div><!-- end main-menu -->
 						</div>
@@ -56,5 +68,46 @@
 			</header>
     <!--End Navigation-->
 {% endblock %}
+
+
 {% block content %}
+      <!--Start Features-->
+  <section  id="about" class="section">
+       <div class="container">
+           <div class="row main_content">
+               {% if user.is_authenticated %}
+                <p>Welcome.</p>
+                <p>
+                  <form action="" method="post" id="upload_form" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+
+                    {{ form|crispy }}
+                    <input type="submit" value="Submit">
+                    <input type="submit" value="Cancel" onclick="window.location.href='{% url 'home:content' %}';return false;">
+                  </form>
+                </p>
+                 https://stackoverflow.com/questions/2472422/django-file-upload-size-limit
+                <script>
+                $("#upload_form").submit(function() {
+                  console.log('Checking file size');
+                  if (window.File && window.FileReader && window.FileList && window.Blob) {
+                      var file = $('#id_{{ form.upload_field_name }}')[0].files[0];
+                      if (file && file.size > {{ form.max_upload_limit }} ) {
+                          alert("File " + file.name + " of type " + file.type + " must be < {{ form.max_upload_limit_text }}");
+                      return false;
+                    }
+                  }
+
+                });
+                </script>
+               {% else %}
+                <h2>You are not logged in.</h2>
+               {% endif %}
+
+           </div> <!-- /.row-->
+       </div> <!-- /.container-->
+  </section>
+  <!--End Features-->
+
 {% endblock %}

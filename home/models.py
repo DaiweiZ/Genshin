@@ -13,7 +13,7 @@ class Ad(models.Model):
         max_length=200,
         validators=[MinLengthValidator(2, "Title must be greater than 2 characters")]
     )
-    price = models.DecimalField(max_digits=7, decimal_places=2, null=True)
+
     text = models.TextField()
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
