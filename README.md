@@ -9,3 +9,4 @@ There are four main functions of the website:<br />
   * Users can see the newest content.<br />
   * Creators can upload their artwork.<br />
   * Viewers can watch random videos if they are tired of the recommendation system. <br />
+## Landing Page 
