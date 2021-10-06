@@ -5,7 +5,7 @@ There are so many excellent groups or games in the entertainment market nowadays
 
 
 There are four main functions of the website:<br />
-  Visitors can see the history and some knowledge related to the topic.<br />
-  Users can see the newest content.<br />
-  Creators can upload their artwork.<br />
-  Viewers can watch random videos if they are tired of the recommendation system. <br />
+  * Visitors can see the history and some knowledge related to the topic.<br />
+  * Users can see the newest content.<br />
+  * Creators can upload their artwork.<br />
+  * Viewers can watch random videos if they are tired of the recommendation system. <br />
