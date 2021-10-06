@@ -10,8 +10,8 @@ There are four main functions of the website:<br />
   * Creators can upload their artwork.<br />
   * Viewers can watch random videos if they are tired of the recommendation system. <br />
 ## Landing Page 
-![Gif1](../master/gifs_for_md/图片1)
-![Gif1](../master/gifs_for_md/图片2)
-![Gif1](../master/gifs_for_md/图片3)
-![Gif1](../master/gifs_for_md/图片4)
-![Gif1](../master/gifs_for_md/图片5)
+![Gif1](../master/gifs_for_md/图片1.gif)
+![Gif1](../master/gifs_for_md/图片2.gif)
+![Gif1](../master/gifs_for_md/图片3.gif)
+![Gif1](../master/gifs_for_md/图片4.gif)
+![Gif1](../master/gifs_for_md/图片5.gif)
